@@ -6,22 +6,22 @@ float wtavg, tatavg;
 printf("\nEnter the number of processes -- ");
 scanf("%d", &n);
 for(i=0;i<n;i++)
-{
-p[i]=i;
-printf("Enter Burst Time for Process %d -- ", i);
-scanf("%d", &bt[i]);
-}
-for(i=0;i<n;i++)
-for(k=i+1;k<n;k++)
-if(bt[i]>bt[k])
-{
-temp=bt[i];
-bt[i]=bt[k];
-bt[k]=temp;
-temp=p[i];
-p[i]=p[k];
-p[k]=temp;
-}
+ {
+  p[i]=i;
+  printf("Enter Burst Time for Process %d -- ", i);
+  scanf("%d", &bt[i]);
+ }
+ for(i=0;i<n;i++)
+  for(k=i+1;k<n;k++)
+   if(bt[i]>bt[k])
+   {
+   temp=bt[i];
+  bt[i]=bt[k];
+  bt[k]=temp;
+  temp=p[i];
+  p[i]=p[k];
+  p[k]=temp;
+  }
 wt[0] = wtavg = 0;
 tat[0] = tatavg = bt[0];
 for(i=1;i<n;i++)
